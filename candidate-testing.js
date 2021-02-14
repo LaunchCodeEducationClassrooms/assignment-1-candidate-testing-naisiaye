@@ -14,40 +14,34 @@ let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-candidateName = input.question("Candidate Name: ")
+  candidateName = input.question("Enter name: ");
 }
-
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i = 0; i < questions.length; i++){
-    candidateAnswer =(input.question(`${i+1}) ${questions[i]}`));
-    candidateAnswers.push(candidateAnswer);
-    console.log(`Your Answer: ${candidateAnswers[i]}  \nCorrect Answer: ${correctAnswers[i]}\n`);
+    candidateAnswers[i] = input.question(questions[i]);
   }
 }
-
 function gradeQuiz(candidateAnswers) {
-
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
-  let grade = 0;
-  candidateAnswers = candidateAnswers.join(',').toLowerCase().split(',');
-  correctAnswers = correctAnswers.join(',').toLowerCase().split(',');
-  for (let j=0; j<candidateAnswers.length; j++){
-    if (candidateAnswers[j] === correctAnswers[j]){
-      grade+=1;
-    } else {
-      grade+=0;
+  let numCorrect = 0;
+  console.log(`\nCandidate Name: ${candidateName}`);
+  for (let i = 0; i < questions.length; i++){
+    console.log(`Question ${questions[i]}\nCandidate answer: ${candidateAnswers[i]}\nCorrect answer: ${correctAnswers[i]}`+"\n");
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
+      numCorrect++;
     }
-  } 
-  grade = grade / (questions.length) *100;
- 
-console.log(`>>> Overall Grade: ${grade}% (${grade/100*5} of ${correctAnswers.length} responses correct) <<<`)
- if (grade >= 80) {
-    console.log('>>> Status: PASSED <<<');
-  } else {
-    console.log('>>> Status: FAILED <<<');
   }
-
+  
+  let grade = (numCorrect / questions.length) * 100;
+  
+  console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of 5 responses correct) <<<`);
+  
+  if (grade >= 80){
+    console.log(">>> Status: PASSED <<<");
+  } else {
+    console.log(">>> Status: FAILED <<<");
+  }
   return grade;
 }
 
