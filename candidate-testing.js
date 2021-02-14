@@ -22,7 +22,7 @@ function askQuestion() {
   for (let i = 0; i < questions.length; i++){
     candidateAnswer =(input.question(`${i+1}) ${questions[i]}`));
     candidateAnswers.push(candidateAnswer);
-    console.log(`Your Answer: ${candidateAnswers[i].toLowerCase()}  \nCorrect Answer: ${correctAnswers[i].toLowerCase()}\n`);
+    console.log(`Your Answer: ${candidateAnswers[i]}  \nCorrect Answer: ${correctAnswers[i]}\n`);
   }
 }
 
