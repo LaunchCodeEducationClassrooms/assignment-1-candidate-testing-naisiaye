@@ -46,7 +46,7 @@ function gradeQuiz(candidateAnswers) {
   } else {
     status = 'FAILED';
   }
-console.log(`>>> Overall Grade: ${grade}% (${grade/100*5} of ${correctAnswers.length} responses correct)\n>>> Status: ${status} >>>`)
+console.log(`>>> Overall Grade: ${grade}% (${grade/100*5} of ${correctAnswers.length} responses correct) <<<\n>>> Status: ${status} <<<`)
 
   return grade;
 }
