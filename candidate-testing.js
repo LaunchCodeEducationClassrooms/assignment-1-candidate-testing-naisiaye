@@ -31,7 +31,7 @@ function gradeQuiz(candidateAnswers) {
   
   let grade = (numCorrect / questions.length) * 100;
   
-  console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of 5 responses correct) <<<`);
+  console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${questions.length} responses correct) <<<`);
   
   if (grade >= 80){
     console.log(">>> Status: PASSED <<<");
