@@ -26,7 +26,7 @@ function gradeQuiz(candidateAnswers) {
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
       numCorrect++;
     }
-    console.log(`Question ${questions[i]}\nCandidate answer: ${candidateAnswers[i]}\nCorrect answer: ${correctAnswers[i]}`+"\n");
+    console.log(`${i+1}) ${questions[i]}\nCandidate answer: ${candidateAnswers[i]}\nCorrect answer: ${correctAnswers[i]}`+"\n");
    }
   
   let grade = (numCorrect / questions.length) * 100;
